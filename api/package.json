@@ -1,0 +1,25 @@
+{
+  "name": "rmeal-api",
+  "version": "1.0.0",
+  "description": "a simple meal api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IIsiolu/rmealApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IIsiolu/rmealApp/issues"
+  },
+  "keywords": [
+    "meals",
+    "breafasts",
+    "lunch",
+    "dinner"
+  ],
+  "author": "Ikenna Isiolu <david.isiolu@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/IIsiolu/rmealApp#README"
+}
