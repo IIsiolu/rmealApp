@@ -1,1 +1,5 @@
 # rmealApp
+
+## SETUP
+
+##INSTALLATION INSTRUCTIONS
