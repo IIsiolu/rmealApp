@@ -43,14 +43,16 @@ const MealController = {
   },
 
   updateMealById(req, res) {
-    const withMealId = req.params.id;
-    const theUpdatedMeal = MealService.updateOneMeal(withMealId);
+    const mealId = req.params.id;
+    const mealBody = req.body;
+
+    const theUpdatedMeal = MealService.updateOneMeal(mealId, mealBody);
     return res
       .json({
         status: 'success',
         data: theUpdatedMeal
       })
       .status(200);
-  },
+  }
 };
 export default MealController;

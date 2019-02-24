@@ -3,34 +3,42 @@ import Order from '../models/order.model';
 
 const OrderService = {
   fetchAllOrder() {
-    const allOrder = dummyData.orderedmeal.map((order) => {
+    const allOrder = dummyData.order.map((order) => {
       const newOrder = new Order();
       newOrder.id = order.id;
-      newOrder.mealid = order.mealid;
-      newOrder.quantity = order.quantity;
+      newOrder.name = order.name;
+      newOrder.orderAmount = order.orderAmount;
       return newOrder;
     });
     return allOrder;
   },
 
   addOrder(order) {
-    const orderId = order;
-    const lengthOfOrder = dummyData.orderedmeal.length;
-    const lastOrderId = dummyData.orderedmeal[lengthOfOrder - 1].id;
+
+    const lengthOfOrder = dummyData.order.length;
+    const lastOrderId = dummyData.order[lengthOfOrder - 1].id;
     const newId = lastOrderId + 1;
-    orderId.id = newId;
-    dummyData.orderedmeal.push(order);
-    return order;
+
+    const AddUp = {
+      id: newId,
+      name: order.name,
+      orderAmount: order.orderAmount
+    };
+    
+    dummyData.order.push(AddUp);
+    return AddUp;
   },
 
-  getAnOrder(id) {
-    const orderId = id;
-    const findOrderById = dummyData.orderedmeal.find(order => Number(order.id) === Number(orderId));
-    return findOrderById || {};
-  },
+  updateAnOrder(a, b) {
+    const orderToUpdate = dummyData.order.find(order => Number(order.id) === Number(a));
 
-  // Modify Order Action Down here..Having Bugs. Had to suspend it a little for now
-  // So as to fix then just paste it here and conitnue..cos ESLint makes all red
+    //update meal
+    orderToUpdate.id = a;
+    orderToUpdate.name = b.name;
+    orderToUpdate.orderAmount = b.orderAmount;
+    return orderToUpdate;
+  }
+
 };
 
 export default OrderService;
