@@ -6,7 +6,7 @@ const MealController = {
     return res
       .json({
         status: 'success',
-        data: allMeals,
+        data: allMeals
       })
       .status(200);
   },
@@ -17,7 +17,7 @@ const MealController = {
     return res
       .json({
         status: 'success',
-        data: theNewlyCreatedMeal,
+        data: theNewlyCreatedMeal
       })
       .status(201);
   },
@@ -28,7 +28,7 @@ const MealController = {
     return res
       .json({
         status: 'success',
-        data: theSingleMealFound,
+        data: theSingleMealFound
       })
       .status(200);
   },
@@ -38,7 +38,7 @@ const MealController = {
     const mealToDelete = MealService.destroyOneMeal(usingThisId);
     return res.json({
       status: 'success',
-      data: mealToDelete,
+      data: mealToDelete
     }).status(200);
   },
 
@@ -48,7 +48,7 @@ const MealController = {
     return res
       .json({
         status: 'success',
-        data: theUpdatedMeal,
+        data: theUpdatedMeal
       })
       .status(200);
   },
