@@ -4,8 +4,12 @@
   "description": "a simple meal api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js ",
-    "test": "mocha --require @babel/register --exit||true"
+    "start": "nodemon --exec babel-node api/index.js ",
+    "test": "mocha --require @babel/register --recursive api/test/*.spec.js --exit||true",
+    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
+    "coveralls-coverage": "coveralls < lcov.info",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "heroku-postbuild": "npm install --production && npm run build"
   },
   "repository": {
     "type": "git",
@@ -36,8 +40,11 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
+    "coveralls": "^3.0.3",
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "mocha": "^6.0.1"
+    "mocha": "^6.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^13.3.0"
   }
 }
