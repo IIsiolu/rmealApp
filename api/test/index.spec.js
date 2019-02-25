@@ -15,7 +15,7 @@ describe('Test default route', () => {
           expect(res.status).to.equal(200);
           done();
         });
-    }).timeout(5000);
+    });
     // Test for getting undefined routes
     it('Should return 404 for routes not specified', (done) => {
       chai.request(app)
@@ -24,7 +24,7 @@ describe('Test default route', () => {
           expect(res.status).to.equal(404);
           done();
         });
-    }).timeout(5000);
+    });
     // Test for posting to undefined rouotes
     it('Undefined Routes Should Return 404', (done) => {
       chai.request(app)
@@ -34,5 +34,5 @@ describe('Test default route', () => {
           expect(res).to.have.status(404);
           done();
         });
-    }).timeout(5000);
+    });
 });

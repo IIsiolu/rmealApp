@@ -27,7 +27,7 @@ describe('/POST Post Meal', () => {
           expect(res.body).to.have.property('status').equal('success');
           done();
         });
-    }).timeout(5000);
+    });
 });
   
 describe('/PUT Update Meal', () => {
@@ -48,7 +48,7 @@ describe('/PUT Update Meal', () => {
             expect(res.body).to.have.property('status').equal('success');
           done();
         });
-    }).timeout(5000);
+    });
 });
 
 describe('GET/ Get Meal', () => {
@@ -61,7 +61,7 @@ describe('GET/ Get Meal', () => {
             expect(res.body).to.have.property('status').equal('success');
             done();
         });
-    }).timeout(5000);
+    });
 
     it('should get meal by id', (done) => {
         chai.request(app)
@@ -72,7 +72,7 @@ describe('GET/ Get Meal', () => {
             expect(res.body).to.have.property('status').equal('success');
             done();
         });
-    }).timeout(5000);
+    });
 });
 
 describe('/DELETE Delete a meal', () => {
@@ -85,5 +85,5 @@ describe('/DELETE Delete a meal', () => {
           expect(res.body).to.have.property('status').equal('success');
           done();
         });
-    }).timeout(5000);
+    });
 });

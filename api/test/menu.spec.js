@@ -26,7 +26,7 @@ describe('/POST Add menu', () => {
           expect(res.body).to.have.property('status').equal('success');
           done();
         });
-    }).timeout(5000);
+    });
 });
 
 
@@ -40,5 +40,5 @@ describe('/GET Get Menu', () => {
             expect(res.body).to.have.property('status').equal('success');
             done();
         });
-    }).timeout(5000);
+    });
 });
