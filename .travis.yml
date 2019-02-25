@@ -3,4 +3,11 @@ node_js:
   - "stable"
 cache:
   directories:
-- "node_modules"
+    - "node_modules"
+install:
+  - npm install
+before_install:
+  - cd api
+script: "npm test"
+after_success:
+  - npm run coverage
