@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node api/index.js ",
-    "test": "mocha --require @babel/register --recursive api/test/*.spec.js --exit||true",
+    "test": "nyc mocha --require @babel/register --recursive api/test/*.spec.js --exit||true",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls": "jscoverage lib && YOURPACKAGE_COVERAGE=1 nodeunit --reporter=lcov test | coveralls",
-    "coveralls-coverage": "coveralls < lcov.info",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "heroku-postbuild": "npm install --production && npm run build"
   },
