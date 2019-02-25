@@ -25,7 +25,7 @@ describe('/POST Add order', () => {
             expect(res.body).to.have.property('status').equal('success');
             done();
         });
-    });
+    }).timeout(5000);
 });
 
 describe('/GET orders', () => {
@@ -38,7 +38,7 @@ describe('/GET orders', () => {
             expect(res.body).to.have.property('status').equal('success');
             done();
         });
-    });
+    }).timeout(5000);
 });
 
 describe('/PUT Order', () => {
@@ -58,5 +58,5 @@ describe('/PUT Order', () => {
           expect(res.body).to.have.property('status').equal('success');
           done();
         });
-    });
+    }).timeout(5000);
 });
