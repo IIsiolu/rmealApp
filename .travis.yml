@@ -3,6 +3,9 @@ node_js:
   - "stable"
 cache:
   directories:
-    - "api/node_modules"
-before_install:
-  - cd api
+    - "node_modules"
+before_install: cd ./api
+install: 
+  - npm install
+script:
+  - npm run test
