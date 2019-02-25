@@ -6,33 +6,34 @@ const OrderController = {
     return res
       .json({
         status: 'success',
-        data: allOrders,
+        data: allOrders
       })
       .status(200);
   },
 
   addNewOrder(req, res) {
     const createThisNewOrder = req.body;
-    const theNewlyCreatedOrder = OrderService.addMeal(createThisNewOrder);
+    const theNewlyCreatedOrder = OrderService.addOrder(createThisNewOrder);
     return res
       .json({
         status: 'success',
-        data: theNewlyCreatedOrder,
+        data: theNewlyCreatedOrder
       })
       .status(201);
   },
 
-  getOne(req, res) {
-    const usingThisId = req.params.id;
-    const theSingleOrderFound = OrderService.getAMeal(usingThisId);
+  updateOrder(req, res) {
+    const orderId = req.params.id;
+    const orderBody = req.body;
+
+    const theUpdatedMeal = OrderService.updateAnOrder(orderId, orderBody);
     return res
       .json({
         status: 'success',
-        data: theSingleOrderFound,
+        data: theUpdatedMeal
       })
       .status(200);
-  },
+  }
 
-  // PUT Action down here...
 };
 export default OrderController;

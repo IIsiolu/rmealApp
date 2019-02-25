@@ -20,6 +20,6 @@ const MenuController = {
         data: theNewlyCreatedMenu,
       })
       .status(201);
-  },
+  }
 };
 export default MenuController;

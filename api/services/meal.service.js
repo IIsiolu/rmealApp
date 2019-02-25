@@ -9,6 +9,7 @@ const MealService = {
             newMeal.name = meal.name;
             newMeal.size = meal.size;
             newMeal.price = meal.price;
+            return newMeal;
         });
         return validMeals;
     },
@@ -17,20 +18,26 @@ const MealService = {
         const mealLength = dummyData.meals.length;
         const lastId = dummyData.meals[mealLength - 1].id;
         const newId = lastId + 1;
-        meal.id = newId;
-        dummyData.meals.push(meal);
-        return meal;
+        
+        const AddUp = {
+          id: newId,
+          name: meal.name,
+          size: meal.size,
+          price: meal.price
+        };
+        
+        dummyData.meals.push(AddUp);
+        return AddUp;
     },
 
-    getMeal(id){
-        const meal = dummyData.meals.find(meal => meal.id === parseInt(id));
+    getAMeal(id){
+        const meal = dummyData.meals.find(meal => Number(meal.id) === Number(id));
         return meal || {};
     },
 
     destroyOneMeal(id) {
-        const mealId = id;
         let isDeleted = false;
-        const thisMealId = dummyData.meals.find(meal => Number(meal.id) === Number(mealId));
+        const thisMealId = dummyData.meals.find(meal => Number(meal.id) === Number(id));
         const theMealIndexById = dummyData.meals.indexOf(thisMealId);
         const removedMeal = dummyData.meals.splice(theMealIndexById, 1);
         if (removedMeal) {
@@ -40,20 +47,15 @@ const MealService = {
       },
     
     
-      updateOneMeal(id) {
-        const mealId = id;
-        const mealToUpdate = dummyData.meals.find(meal => Number(meal.id) === Number(mealId));
-        const theMealIndexById = dummyData.meals.indexOf(mealToUpdate);
-        const oldData = dummyData.meals.map((oldMeal) => {
-          const newItem = new Meal();
-          newItem.name = oldMeal.name;
-          newItem.size = oldMeal.size;
-          newItem.price = oldMeal.prize;
-          return newItem;
-        });
-        const update = dummyData.meals.splice(theMealIndexById, 1, oldData);
-        console.log(theMealIndexById);  
-        return update;
+      updateOneMeal(a, b) {
+        const mealToUpdate = dummyData.meals.find(meal => Number(meal.id) === Number(a));
+
+        //update meal
+        mealToUpdate.id = a;
+        mealToUpdate.name = b.name;
+        mealToUpdate.size = b.size;
+        mealToUpdate.price = b.price;
+        return mealToUpdate;
       }
 };
 

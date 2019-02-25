@@ -1,7 +1,7 @@
 class Order{
     constructor(){
         this.id = null;
-        this.orderId = null;
+        this.name = null;
         this.orderAmount = null;
     }
 }

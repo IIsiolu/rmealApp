@@ -20,3 +20,6 @@ app.use('/api/v1/orders', orderRoutes);
 app.use('/api/v1/menu', menuRoutes);
 
 app.listen(port, () => console.log(`Server is up on port ${port}...`));
+
+//module.exports = app;
+export default app;
