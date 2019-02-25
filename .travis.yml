@@ -8,4 +8,6 @@ install:
   - npm install
 before_install:
   - cd api
-script: "npm test"
+script: 
+  - "travis_wait 30 sleep 1800 &"
+  - "npm test"
