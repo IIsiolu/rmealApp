@@ -7,15 +7,7 @@ cache:
 before_install: cd ./api
 install: 
   - npm install
-before_script:
-  - npm global install nyc
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-- ./cc-test-reporter before-build --debug
 script:
   - npm run test
-  - nyc --reporter=lcov npm run unit
-after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 after_success:
   npm run coverage
