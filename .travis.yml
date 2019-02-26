@@ -7,6 +7,9 @@ cache:
 before_install: cd ./api
 install: 
   - npm install
+env:
+  global:
+    - CC_TEST_REPORTER_ID=bc766e318244c538ea9378493e6126669934989f279b5f0f7eddb7620c925a0e
 script:
   - npm run test
 after_success:
