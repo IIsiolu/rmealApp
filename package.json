@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./build/index.js",
-    "test": "nyc --require @babel/register mocha --recursive api/test/*.spec.js --exit||true",
+    "test": "nyc --require @babel/register mocha --recursive build/test/*.spec.js --exit||true",
     "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
     "coveralls-coverage": "coveralls < lcov.info",
     "codeclimate-coverage": "codeclimate-test-reporter < lcov.info",
