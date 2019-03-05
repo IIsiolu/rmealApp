@@ -7,7 +7,7 @@ import orderRoutes from './routes/order.route';
 import menuRoutes from './routes/menu.route';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = parseInt(process.env.PORT, 10) || 3000;
 
 app.use(bodyParser.json());
 
